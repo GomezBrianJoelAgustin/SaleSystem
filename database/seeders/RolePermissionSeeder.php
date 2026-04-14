@@ -15,15 +15,15 @@ class RolePermissionSeeder extends Seeder
     public function run(): void
     {
         // Roles
-        $admin = Role::create(['name' => 'Admin']);
-        $manager = Role::create(['name' => 'Manager']);
-        $employed = Role::create(['name' => 'Employed']);
+        $admin = Role::firstOrCreate(['name' => 'Admin']);
+        $manager = Role::firstOrCreate(['name' => 'Manager']);
+        $employed = Role::firstOrCreate(['name' => 'Employed']);
 
         // Permisos
-        Permission::create(['name' => 'view-dashboard']);
-        Permission::create(['name' => 'create-users']);
-        Permission::create(['name' => 'edit-users']);
-        Permission::create(['name' => 'delete-users']);
+        Permission::firstOrCreate(['name' => 'view-dashboard']);
+        Permission::firstOrCreate(['name' => 'create-users']);
+        Permission::firstOrCreate(['name' => 'edit-users']);
+        Permission::firstOrCreate(['name' => 'delete-users']);
 
         $admin->givePermissionTo(Permission::all());
         $manager->givePermissionTo(['view-dashboard', 'create-users', 'edit-users']);

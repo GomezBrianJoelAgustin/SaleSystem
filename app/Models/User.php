@@ -32,4 +32,12 @@ class User extends Authenticatable
             'two_factor_confirmed_at' => 'datetime',
         ];
     }
+
+    public function sales(){
+        return $this->hasMany(Sale::class); //hasMany porque un usuario puede tener muchas ventas
+    }
+
+    public function branches(){
+        return $this->belongsTo(Branch::class); //belongsTo porque un usuario pertenece a una sucursal
+    }
 }
