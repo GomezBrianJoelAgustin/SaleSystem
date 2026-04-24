@@ -26,8 +26,8 @@ export default function index({users}: {users: User[]}) {
                     <TableHeader>
                         <TableRow>
                         <TableHead className="w-25">ID</TableHead>
-                        <TableHead>Name</TableHead> 
-                        <TableHead>Email</TableHead>
+                        <TableHead>Names</TableHead> 
+                        <TableHead>Emails</TableHead>
                         <TableHead className="text-right">Role</TableHead>
                         </TableRow>
                     </TableHeader>
