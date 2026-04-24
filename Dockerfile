@@ -26,5 +26,7 @@ RUN chmod -R 775 storage bootstrap/cache
 # Exponer puerto
 EXPOSE 8000
 
+RUN mkdir -p database && touch database/database.sqlite
+
 # Comando de inicio
 CMD php artisan migrate --force && php artisan config:clear && php artisan cache:clear && php artisan serve --host=0.0.0.0 --port=8000
